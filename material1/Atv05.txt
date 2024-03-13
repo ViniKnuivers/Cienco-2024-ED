@@ -1,0 +1,50 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int pe, cp, codigo, vlrfn;
+
+    cout << "Informe o Preço da etiqueta: " << endl;
+    cin >> pe;
+
+    cout << "Informe o código de pagamento: " << endl;
+    cin >> codigo;
+
+        switch (codigo)
+        {
+            case 1:
+            cout << "Sua forma de pagamento é a vista em dinheiro ou cheque com 10% de desconto" << endl;
+            vlrfn = pe - (pe * 0.1);
+            cout << "O valor fica em: " << vlrfn << endl;
+
+            break;
+
+            case 2:
+                cout << "Sua forma de pagamento é com cartão de crédito com 5% de desconto" << endl;
+                vlrfn = pe - (pe * 0.05);
+                cout << "O valor fica em: " << vlrfn << endl;
+                break;
+
+            case 3:
+                cout << "Sua forma de pagamento é em 2 vezes sem juros" << endl;
+                cout << "O valor fica em: " << pe << endl;
+                break;
+
+            case 4:
+                cout << "Sua forma de pagamento é em 3 vezes com 10% de juros no valor total" << endl;
+                vlrfn = pe + (pe * 0.1);
+                cout << "O valor fica em: " << vlrfn << endl;
+                break;
+
+
+            break;
+            default:
+                cout << "Não selecionou uma forma de pagamento válida!!";
+
+        }
+        return 0;
+
+
+}

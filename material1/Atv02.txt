@@ -1,0 +1,40 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int idade, infantila, infantilb, juvenila, juvenilb, senior;
+
+    cout << "Informe a idade: ";
+    cin >> idade;
+
+    //infantila (>= 5 < 8)
+    //infantilb (>= 8 < 11)
+    //juvenila (>= 11 < 14)
+    //juvenilb (>= 14 < 18)
+    //senior (>17)
+
+    if (idade >= 5  && idade < 7)
+    {
+        cout << "Ele (a) é infantil A!";
+    }
+    else if (idade >= 8 && idade < 10)
+    {
+        cout << "Ele (a) é infantil B!";
+    }
+    else if (idade >= 11 && idade < 13)
+    {
+        cout << "Ele (a) é juvenil A!";
+    }
+    else if (idade >= 14 && idade <17)
+    {
+        cout << "Ele (a) é juvenil B!";
+    }
+    else
+    {
+        cout << "Ele (a) é senior!";
+    }
+
+
+}

@@ -1,0 +1,23 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int hrtb, vlrsm, slrbt, slrfn, clchrtb;
+    slrbt = 0;
+    slrfn = 0;
+
+    cout << "Informe quantas horas foram trabalhadas: ";
+    cin >> hrtb;
+
+    cout << "Informe agora o salario minimo: ";
+    cin >> vlrsm;
+
+    slrbt = hrtb * (vlrsm / 2);
+
+    slrfn = slrbt - ( slrbt * 0.03);
+
+    cout << "O salario final é de: " << slrfn;
+
+}
