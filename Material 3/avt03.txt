@@ -1,0 +1,66 @@
+//3 - Construir um programa para avaliar filmes, pedindo ao
+//usuário para avaliar diferentes aspectos como enredo, atuação e
+//efeitos especiais. Calcule a média das notas avaliadas em
+//enredo, atuação e efeitos especiais. O programa deve permitir a
+//avaliação de vários filmes. O programa deve parar quando
+//usuário não desejar mais continuar.
+
+#include <iostream>
+#include <locale.h>
+
+
+using namespace std;
+
+struct Filme
+{
+    string nome;
+    int atuacao;
+    int enredo;
+    int ef;
+};
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+
+    Filme filme;
+    char repetir = 's';
+    int accEnredo, accAtuacao, accEF = 0;
+    int contador = 0;
+    float mediaEnredo, mediaAtuacao, mediaEF = 0;
+
+
+    while (repetir == 's' || repetir == 'S')
+        {
+        cout << "Qual o nome do filme? ";
+        getline(cin, filme.nome);
+
+
+        cout << "de 0 a 10 qual a sua nota para a atuacao? ";
+        cin >> filme.atuacao;
+        accAtuacao = accAtuacao + filme.atuacao;
+
+        cout << "de 0 a 10 qual a sua nota para o enredo? ";
+        cin >> filme.enredo;
+        accEnredo = accEnredo + filme.enredo;
+
+        cout << "de 0 a 10 qual a sua nota para o Efeitos especiais? ";
+        cin >> filme.ef;
+        accEF = accEF + filme.ef;
+
+        contador = contador + 1;
+        cin.ignore();
+
+        cout << "Deseja cadastrar mais notas (s/n): ";
+        cin >> repetir;
+        cin.ignore();
+    }
+
+    mediaEnredo = accEnredo / contador;
+    mediaAtuacao = accAtuacao / contador;
+    mediaEF = accEF / contador;
+
+    cout << "A média das notas do enredo são: " << mediaEnredo << endl;
+    cout << "A média das notas da atuação são: " << mediaAtuacao << endl;
+    cout << "A média das notas dos efeitos especiais são: " << mediaEF << endl;
+
+}

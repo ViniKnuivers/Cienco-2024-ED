@@ -1,0 +1,48 @@
+//1- Criar um programa que registre informações de vários
+//pacientes, incluindo nome, idade e um sintoma específico. O
+//programa deve permitir a entrada de dados para múltiplos
+//pacientes até que o usuário decida parar.
+#include <iostream>
+#include <locale.h>
+
+using namespace std;
+
+struct Paciente
+{
+    string nome;
+    int idade;
+    string sintoma;
+};
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+
+    Paciente paciente;
+
+    char repetir = 's';
+
+
+    while (repetir == 's' || repetir == 'S')
+    {
+        cout << "Por favor, digite o nome do paciente: ";
+        getline (cin, paciente.nome);
+
+
+        cout << "Por favor, informe a idade do paciente!: ";
+        cin >> paciente.idade;
+
+
+        cin.ignore();
+
+        cout << "Por favor, informe qual seria o(s) sintomas do paciente!: ";
+        getline (cin, paciente.sintoma);
+
+
+        cout << "Deseja adicionar outro paciente? (s/n) ";
+        cin >> repetir;
+
+    }
+    return 0;
+}
+

@@ -1,0 +1,48 @@
+//2- Desenvolver um programa que registre detalhes de livros em
+//uma biblioteca, como título, autor e ano de publicação. O
+//programa deve continuar solicitando informações até que um
+//título de livro específico seja inserido.
+#include <iostream>
+#include <locale.h>
+
+using namespace std;
+
+struct Livro
+{
+    string titulo;
+    int publicacao;
+    string autor;
+};
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+
+    Livro livro;
+
+    char repetir = 's';
+
+
+    while (repetir == 's' || repetir == 'S')
+    {
+        cout << "Por favor, digite o título do livro: ";
+        getline (cin, livro.titulo);
+
+
+        cout << "Por favor, informe o nome do autor do livro: ";
+        cin >> livro.autor;
+
+
+        cin.ignore();
+
+        cout << "Por favor, informe qual o ano em que o livro foi publicado: ";
+        cin >> livro.publicacao;
+
+
+        cout << "Deseja adicionar outro livro? (s/n) ";
+        cin >> repetir;
+
+    }
+    return 0;
+}
+
