@@ -1,0 +1,65 @@
+/*Você foi encarregado de desenvolver um programa em C++ que permita ao usuário inserir valores em um vetor
+de 10 inteiros. Após a inserção dos valores, o programa deverá realizar algumas operações de manipulação do
+vetor utilizando ponteiros. O programa deve criar um vetor de 10 inteiros. Deve solicitar ao usuário que insira
+valores para cada posição do vetor. Após a inserção dos valores, o programa deve imprimir os conteúdos do
+vetor na ordem normal. Em seguida, o programa deve imprimir os conteúdos do vetor na ordem inversa. Após
+isso, o programa deve encontrar e exibir o maior e o menor valor armazenado no vetor. Finalmente, o programa
+deve calcular e exibir a média dos valores armazenados no vetor.*/
+
+#include <iostream>
+#define TAMANHO  10
+#include <locale.h>
+
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL, "Portuguese");
+    int vetor[TAMANHO];
+
+
+    cout << "Insira 10 valores inteiros: " << endl;
+    for (int i = 0; i < TAMANHO; i++)
+    {
+        cout << "Valor " << i + 1 << ": ";
+        cin >> vetor[i];
+    }
+
+    cout << "Conteúdos do vetor na ordem normal:" << endl;
+        for (int i = 0; i < TAMANHO; i++)
+        {
+            cout << vetor[i] << " ";
+        }
+
+    cout << "Conteúdos do vetor na ordem inversa:" << endl;
+    for (int i = TAMANHO - 1; i >= 0; i--)
+        {
+            cout << vetor[i] << " ";
+        }
+
+    int maior = vetor[0];
+    int menor = vetor[0];
+    for (int i = 1; i < TAMANHO; ++i)
+        {
+            if (vetor[i] > maior)
+                {
+                    maior = vetor[i];
+                }
+            if (vetor[i] < menor)
+                {
+                    menor = vetor[i];
+                }
+        }
+    cout << "Maior valor: " << maior << endl;
+    cout << "Menor valor: " << menor << endl;
+
+    int soma = 0;
+        for (int i = 0; i < TAMANHO; ++i)
+            {
+                soma += vetor[i];
+            }
+    int media = soma / TAMANHO;
+    cout << "Média dos valores: " << media << endl;
+
+    return 0;
+}

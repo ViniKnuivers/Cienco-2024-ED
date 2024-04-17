@@ -1,0 +1,50 @@
+/*Em uma competição de ginástica, cada atleta recebe votos de sete jurados. A melhor e a pior nota são eliminadas.
+A sua nota fica sendo a média dos votos restantes. Você deve fazer um programa que receba o nome do ginasta
+e as notas dos sete jurados alcançadas pelo atleta em sua apresentação e depois informe a sua média, conforme
+a descrição acima informada (retirar o melhor e o pior salto e depois calcular a média com as notas restantes).
+Um exemplo de saída do programa deve ser conforme o exemplo abaixo:*/
+
+#include <iostream>
+#include <string>
+#include <locale.h>
+
+using namespace std;
+
+int main()
+{
+
+    setlocale(LC_ALL, "Portuguese");
+    string nome;
+    double notas[7];
+
+
+    cout << "Digite o nome do ginasta: ";
+    getline(cin, nome);
+
+
+    double menor = 10.0;
+    double maior = 0.0;
+    double soma = 0.0;
+        for (int i = 0; i < 7; ++i)
+            {
+                cout << "Nota " << i + 1 << ": ";
+                cin >> notas[i];
+                soma += notas[i];
+                    if (notas[i] < menor)
+                    {
+                        menor = notas[i];
+                    }
+                    if (notas[i] > maior)
+                    {
+                        maior = notas[i];
+                    }
+            }
+
+    soma = soma - menor - maior;
+
+    double media = soma / 5;
+
+    cout << "Média dos votos do ginasta " << nome << ": " << media << endl;
+
+    return 0;
+}

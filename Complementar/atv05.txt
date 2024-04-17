@@ -1,0 +1,33 @@
+/*Você foi incumbido de desenvolver um programa em C++ para registrar informações sobre alunos de uma
+escola. Para isso, você vai criar uma estrutura chamada Aluno que armazenará os campos nome, idade e nota.
+Em seguida, você vai criar um typedef para Aluno chamado TipoAluno. O programa deve solicitar ao usuário
+que insira informações sobre um aluno, como nome, idade e nota, e armazená-las em uma variável do tipo
+TipoAluno. Após a inserção das informações, exiba na tela os dados do aluno fornecidos pelo usuário.*/
+
+#include <iostream>
+
+using namespace std;
+
+typedef struct Aluno {
+    string nome;
+    int idade;
+    int nota;
+}TipoAluno;
+
+int main()
+{
+    Aluno TipoAluno;
+
+    cout << "Informe o nome do aluno: ";
+    getline (cin, TipoAluno.nome);
+
+    cout << "Informe a idade do aluno: ";
+    cin >> TipoAluno.idade;
+
+    cout << "Informe a nota do aluno: ";
+    cin >> TipoAluno.nota;
+
+    cout << "O nome do aluno(a) é : " << TipoAluno.nome << endl << "Tem a idade de: " << TipoAluno.idade << endl << "Com a nota: " << TipoAluno.nota << endl;
+
+    return 0;
+}
