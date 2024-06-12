@@ -1,0 +1,64 @@
+#include <iostream>
+#include <stack>
+
+using namespace std;
+
+
+int main()
+{
+    stack<int> elemento;
+
+    int opcao;
+    int res;
+
+    do
+    {
+        cout << "Escolha uma opção:" <<endl;
+        cout << "1. Inserir um elemento" <<endl;
+        cout << "2. Remover elemento do topo" <<endl;
+        cout << "3. Verificar elemento do topo" <<endl;
+        cout << "4. Verificar se a pilha está vazia" <<endl;
+        cout << "5. Exibir tamanho da pilha" <<endl;
+        cout << "0. Sair" <<endl;
+        cout << "Opção: " << endl;
+        cin >> opcao;
+
+    switch(opcao)
+    {
+        case 1:
+            cout << "Digite um número: ";
+            cin >> res;
+            elemento.push(res);
+            cout << endl;
+            break;
+
+        case 2:
+            elemento.pop();
+            cout << "Número removido" <<endl;
+            cout << endl;
+            break;
+
+        case 3:
+            cout << "Numero no Topo: " << elemento.top() <<endl;
+            cout << endl;
+            break;
+
+        case 4:
+            cout << "A pilha está vazia? " << (elemento.empty() ? "Sim" : "Não") <<endl;
+            cout << endl;
+            break;
+
+        case 5:
+            cout << "Número de pilha: " << elemento.size() <<endl;
+            cout << endl;
+            break;
+
+        case 0:
+            cout << "Saindo" <<endl;
+            cout << endl;
+            break;
+    }
+
+    }while(opcao != 0);
+
+}
