@@ -1,0 +1,49 @@
+#include <iostream>
+#include <list>
+#include <iterator>
+
+using namespace std;
+
+void imprimeLista(list<int> lista)
+{
+
+	list<int>::const_iterator valores; // [classe]::[metodo]
+
+	if (lista.empty())
+	{
+		cout << "IMPOSSIVEL IMPRESSAO - LISTA VAZIA";
+	}
+	else {
+		valores = lista.begin(); //aponta para o 1º elemento da lista
+        do{
+            cout << *valores << " ";
+			valores++;
+		}
+		while (valores != lista.end());
+	}
+}
+
+
+int main()
+{
+    setlocale(LC_ALL,"Portuguese");
+	list<int> lista;
+	int n;
+	cout << "Digite 5 números: \n";
+	for(int i = 1; i <= 5;i++)
+    {
+        cout << "Digite número " << i << ": ";
+        cin >> n;
+        lista.push_back(n);
+    }
+
+    imprimeLista(lista);
+
+    cout << endl;
+
+    lista.reverse();
+
+    imprimeLista(lista);
+
+	return 0;
+}

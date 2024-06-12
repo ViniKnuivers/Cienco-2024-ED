@@ -1,0 +1,60 @@
+#include <iostream>
+#include <list>
+#include <iterator>
+
+using namespace std;
+
+void imprimeLista(list<string> lista)
+{
+
+	list<string>::const_iterator valores; // [classe]::[metodo]
+
+	if (lista.empty())
+	{
+		cout << "IMPOSSIVEL IMPRESSAO - LISTA VAZIA";
+	}
+	else {
+		valores = lista.begin(); //aponta para o 1º elemento da lista
+        do{
+            cout << *valores << " ";
+			valores++;
+		}
+		while (valores != lista.end());
+	}
+}
+
+int main ()
+{
+    setlocale(LC_ALL,"Portuguese");
+    list<string> lista;
+    imprimeLista(lista);
+    cout << endl;
+
+    string nome;
+    int cadastro, opcao;
+
+    cout << "Quantos funcionários vão ser cadastrados? ";
+    cin >> cadastro;
+
+    cin.ignore();
+    for(int i = 0; i < cadastro;i++)
+    {
+        cout << "Qual nome do funcionário? ";
+        getline(cin, nome);
+        lista.push_back(nome);
+    }
+
+    imprimeLista(lista);
+
+
+    list<string> listaAux;
+    listaAux = lista;
+
+    cout << endl << "Lista Reversa: " <<endl;
+    listaAux.reverse();
+    imprimeLista(listaAux);
+
+    cout << endl << "Tem " << cadastro << " funcionários cadastrados";
+
+    return 0;
+}
